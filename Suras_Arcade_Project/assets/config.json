@@ -1,0 +1,12 @@
+{
+  "appName": "Suras Modular Arcade",
+  "version": "2.0.0",
+  "theme": "Cyber Neon 2026",
+  "modules": [
+    "index.html",
+    "css/style.css",
+    "js/game.js",
+    "images/logo.svg",
+    "assets/config.json"
+  ]
+}

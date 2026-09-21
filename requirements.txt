@@ -1,0 +1,54 @@
+# ============================================================
+# Suras Brain — unified Python requirements (engine: Python 3.13)
+# Generated: 2026-09-17 — merged manifest (user list + reality)
+# Install:  pip install -r requirements.txt   (from E:\Suras)
+# NOTE: rembg downloads its u2net model (~176MB) on FIRST run
+#       into %U2NET_HOME% (= E:\SurasData\u2net) — needs internet + disk once.
+# System binaries (NOT pip — install separately):
+#   - Tesseract OCR + ara.traineddata  (OCR, incl. Arabic)
+#   - Nmap                              (recon; python-nmap needs it on PATH)
+#   - FFmpeg on PATH is OPTIONAL — moviepy uses the bundled
+#     imageio-ffmpeg binary automatically.
+# ============================================================
+
+# --- web engine core ---
+fastapi
+uvicorn
+python-multipart
+httpx
+requests
+aiohttp
+beautifulsoup4
+playwright
+
+# --- media: image / video / voice ---
+pillow
+opencv-python
+rembg
+rembg[cpu]
+moviepy
+imageio-ffmpeg
+gTTS
+arabic-reshaper
+python-bidi
+websockets
+
+# --- documents ---
+pypdf
+pikepdf
+pdf2docx
+PyMuPDF
+python-docx
+
+# --- OCR bridge (needs Tesseract binary, see above) ---
+pytesseract
+
+# --- recon / OSINT ---
+scapy
+python-nmap
+shodan
+
+# --- numerics ---
+numpy
+# scipy
+# torch (later for advanced deep learning)

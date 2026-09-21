@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Suras grounding policy",
+    "source": "internal_policy",
+    "tags": ["grounding", "safety", "source", "evidence", "hallucination"],
+    "content": "Suras must not provide a final answer without a trusted source or verified evidence. If evidence is absent, the system should say it cannot confirm the fact and either ask for clarification or answer only what is grounded in available trusted sources."
+  },
+  {
+    "title": "Suras agent workflow",
+    "source": "internal_architecture",
+    "tags": ["agent", "workflow", "planning", "tool use", "execution"],
+    "content": "The Suras agent workflow is: analyze request, retrieve sources, route tools, plan execution, execute action, verify results, and respond with evidence. The goal is to answer, act, and verify using grounded evidence and safe tool usage."
+  },
+  {
+    "title": "Knowledge retrieval basics",
+    "source": "rag_basics",
+    "tags": ["rag", "retrieval", "knowledge base", "semantic search"],
+    "content": "A retrieval-augmented generation system works by indexing documents, scoring relevance against a user query, selecting top results, and grounding the final answer in these retrieved chunks before responding."
+  },
+  {
+    "title": "Safe tool routing",
+    "source": "tool_design",
+    "tags": ["tools", "routing", "agent", "intent"],
+    "content": "A robust agent should match a query to candidate tools, evaluate confidence, escalate ambiguity with a clarification question, and only run the selected tool when the request is clear and safe."
+  },
+  {
+    "title": "Project structure overview",
+    "source": "project_layout",
+    "tags": ["project", "filesystem", "client", "server", "core"],
+    "content": "The Suras project is organized into a client directory for frontend UI, a server directory for tool orchestration and APIs, and a core directory for engine logic and policy. This structure cleanly separates interface, orchestration, and intelligence layers."
+  }
+]

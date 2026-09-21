@@ -1,0 +1,16 @@
+@echo off
+title Restarting Suras AI...
+echo ============================================
+echo   Restarting Suras AI Services...
+echo ============================================
+
+echo [1/3] Terminating old processes...
+powershell -NoProfile -Command "Get-Process node, python -ErrorAction SilentlyContinue | Where-Object { $_.MainWindowTitle -like '*Suras*' -or (Get-NetTCPConnection -OwningProcess $_.Id -LocalPort 3001,3010,5173 -ErrorAction SilentlyContinue) } | Stop-Process -Force -ErrorAction SilentlyContinue"
+
+timeout /t 1 >nul
+echo [2/3] Cleaning up ports...
+powershell -NoProfile -Command "Get-NetTCPConnection -LocalPort 3001,3010,5173 -ErrorAction SilentlyContinue | ForEach-Object { Stop-Process -Id $_.OwningProcess -Force -ErrorAction SilentlyContinue }"
+
+timeout /t 1 >nul
+echo [3/3] Starting fresh Suras instance...
+call "E:\Suras\start-suras.bat"
